@@ -1,15 +1,23 @@
 package com.myTest;
 
-import static strman.Strman.append;
+import java.io.IOException;
 
 /**
  * Hello world!
  */
 public class App {
-    public static void main(String[] args) {
-//        String s = append("f", "o", "o", "b", "a", "r");
-        HandleString handle = new HandleString();
-        System.out.println(handle.handle());
-        System.out.println("Hello World!");
+    public static void main(String[] args) throws IOException {
+        if (args.length > 0 ){
+            HandleString.handle(args[0]);
+            CopyFile.copyFile("Hello.txt", args[0] + ".txt");
+        } else {
+            HandleString.handle("World!");
+            CopyFile.copyFile("Hello.txt", "World.txt");
+        }
+
+
+
+
     }
+
 }

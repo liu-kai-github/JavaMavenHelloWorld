@@ -4,8 +4,9 @@ import static strman.Strman.append;
 
 public class HandleString {
 
-    String handle(){
-        return append("f", "o", "o", "b", "a", "r");
+    static void handle(String name){
+        String s = append("Hello ", name);
+        System.out.println(s);
     }
 
 }
